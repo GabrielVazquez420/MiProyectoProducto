@@ -1,0 +1,12 @@
+<h2>Carrito de Compras</h2>
+
+<div>
+    <ul *ngIf="carrito.length > 0">
+        <li *ngFor="let producto of carrito; let i = index">
+            {{producto.nombre}} - ${{producto.precio}}
+            <!-- <button (click)="eliminarProducto(i)">Eliminar</button> -->
+    </ul>
+    <button *ngIf="carrito.length > 0" (click)="carritoService.descargarXML()">Descargar XML</button>
+</div>
+<p *ngIf="carrito.length === 0">El carrito esta vacio</p>
+
